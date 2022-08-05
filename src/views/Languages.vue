@@ -4,7 +4,6 @@
     v-model:value="language"
     style="width: 120px"
     @focus="focus"
-    placeholder="English"
   >
     <a-select-option value="en">English</a-select-option>
     <a-select-option value="de">German</a-select-option>
@@ -14,7 +13,6 @@
   </a-select>
 </template>
 <script>
-import { defineComponent } from "vue";
 import { ref, computed } from "@vue/reactivity";
 import { useStore } from "vuex";
 import { watch } from "@vue/runtime-core";
@@ -25,7 +23,7 @@ export default {
 
   setup() {
     const store = useStore();
-    const language = ref("");
+    const language = ref("en");
 
     watch(
       () => language.value,
